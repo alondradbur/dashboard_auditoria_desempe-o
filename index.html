@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Institucional de Seguimiento | Auditoría de Desempeño</title>
+  <meta name="description" content="Panel Institucional de Seguimiento de Auditoria de Desempeño de la Unidad de Evaluación y Control de la CVASEBCS.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       PANTALLA DE INICIO
+  ========================================================== -->
+  <section class="pantalla-inicio" id="pantallaInicio">
+    <div class="inicio-decoracion inicio-decoracion-superior"></div>
+    <div class="inicio-decoracion inicio-decoracion-inferior"></div>
+
+    <div class="inicio-fondo-edificio" aria-hidden="true"></div>
+
+    <main class="inicio-contenido">
+      <div class="logo-circulo logo-circulo-grande">
+        <img src="img/logo-uec.png" alt="Logo de la Unidad de Evaluación y Control">
+      </div>
+
+      <h1>Panel Institucional de Seguimiento</h1>
+      <h2>Auditoría de Desempeño</h2>
+      <div class="separador-dorado"></div>
+
+      <button class="boton-ingresar" id="botonIngresar" type="button">
+        <span>›</span>
+        INGRESAR
+      </button>
+    </main>
+
+    <footer class="footer-inicio">
+      <div>
+        <span class="footer-icono">▣</span>
+        <strong>Última actualización</strong>
+        <small id="fechaInicio">30 de junio de 2026</small>
+      </div>
+
+      <div>
+        <span class="footer-icono">◎</span>
+        <strong>Fuente de información</strong>
+        <small>Google Sheets / Apps Script</small>
+      </div>
+
+      <div>
+        <span class="footer-icono">&lt;/&gt;</span>
+        <strong>Versión</strong>
+        <small>1.0</small>
+      </div>
+
+      <div>
+        <span class="footer-icono">♙</span>
+        <strong>Desarrollado por</strong>
+        <small>Alondra Burgoin Beltrán</small>
+      </div>
+    </footer>
+  </section>
+
+
+  <!-- =========================================================
+       DASHBOARD PRINCIPAL
+  ========================================================== -->
+  <section class="app" id="dashboardApp" hidden>
+
+    <!-- =======================================================
+         MENÚ LATERAL TIPO PRESENTACIÓN
+    ======================================================== -->
+    <aside class="menu-lateral" aria-label="Navegación de la junta">
+      <div class="menu-logo logo-circulo">
+        <img src="img/logo-uec.png" alt="Logo UEC">
+      </div>
+
+      <nav class="linea-narrativa" id="menuSecciones">
+        <a href="#objetivo" class="activo"><span>1</span>Objetivo</a>
+        <a href="#propuesta"><span>2</span>¿Qué se propone incorporar?</a>
+        <a href="#estructura"><span>3</span>Estructura del Cuadro 1.1</a>
+        <a href="#reglas"><span>4</span>Reglas para el llenado</a>
+        <a href="#indicadores"><span>5</span>Indicadores automáticos</a>
+        <a href="#ejemplo"><span>6</span>Ejemplo de captura</a>
+        <a href="#beneficios"><span>7</span>Beneficios</a>
+        <a href="#conclusiones"><span>8</span>Conclusiones</a>
+      </nav>
+
+      <button class="menu-accion" id="botonDescargarPDF" type="button">
+        <span>▤</span>
+        <strong>Informe de Solventación</strong>
+        <small>Descargar PDF</small>
+      </button>
+    </aside>
+
+
+    <!-- =======================================================
+         CONTENIDO PRINCIPAL
+    ======================================================== -->
+    <div class="contenido-principal">
+
+      <!-- =====================================================
+           ENCABEZADO FIJO CENTRADO
+      ====================================================== -->
+      <header class="encabezado-fijo">
+        <div class="encabezado-columna izquierda"></div>
+
+        <div class="encabezado-titulo">
+          <h1>Auditoria de Desempeño de la Unidad de Evaluación y Control</h1>
+        </div>
+
+        <div class="encabezado-columna derecha">
+          <div class="pildora-fecha">▣ <span>30 de junio de 2026</span></div>
+          <button class="boton-inicio" id="botonVolverInicio" type="button">⌂ Inicio</button>
+        </div>
+      </header>
+
+      <main class="lienzo-dashboard">
+        <img class="marca-agua" src="img/logo-uec.png" alt="" aria-hidden="true">
+
+        <!-- ===================================================
+             BLOQUE SUPERIOR: OBJETIVO
+        ==================================================== -->
+        <section class="seccion seccion-destacada" id="objetivo">
+          <div class="texto-seccion texto-objetivo-centrado">
+            <p class="etiqueta-seccion">Informe de Solventación</p>
+            <h2>Objetivo</h2>
+            <p>
+              Incorporar una nueva sección denominada <strong>Consolidado de Procedimientos Jurídicos</strong>,
+              que concentre en un solo apartado la información referente a las faltas administrativas graves y no graves
+              derivadas de la fiscalización superior, permitiendo un seguimiento homogéneo, trazable y oportuno de los
+              expedientes durante todo su ciclo procesal.
+            </p>
+          </div>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: PROPUESTA
+        ==================================================== -->
+        <section class="seccion grid-dos" id="propuesta">
+          <article class="tarjeta-informe">
+            <span class="numero-redondo">2</span>
+            <h2>¿Qué se propone incorporar?</h2>
+            <p>
+              Una sección nueva dentro del informe semestral para ordenar, homologar y presentar el seguimiento de los
+              procedimientos jurídicos relacionados con faltas graves y no graves.
+            </p>
+          </article>
+
+          <article class="tarjeta-informe tarjeta-verde">
+            <p class="etiqueta-clara">Nombre de la sección propuesta</p>
+            <h3>Consolidado de Procedimientos Jurídicos</h3>
+            <p>
+              La sección funcionará como base única para capturar expedientes y generar automáticamente tablas,
+              indicadores y gráficas para la presentación institucional.
+            </p>
+          </article>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: ESTRUCTURA DEL CUADRO
+        ==================================================== -->
+        <section class="seccion" id="estructura">
+          <div class="titulo-bloque">
+            <span class="numero-redondo">3</span>
+            <div>
+              <h2>Estructura del Cuadro 1.1</h2>
+              <p>El cuadro base deberá capturar un expediente por renglón para conservar trazabilidad individual.</p>
+            </div>
+          </div>
+
+          <div class="tabla-contenedor">
+            <table class="tabla-ejecutiva" id="tablaEstructura">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: REGLAS DE LLENADO
+        ==================================================== -->
+        <section class="seccion" id="reglas">
+          <div class="titulo-bloque titulo-con-espacio">
+            <span class="numero-redondo">4</span>
+            <div>
+              <h2>Reglas para el llenado del Cuadro 1.1</h2>
+              <p>Disposiciones mínimas para asegurar consistencia, trazabilidad y calidad de la información.</p>
+            </div>
+          </div>
+
+          <div class="grid-reglas" id="contenedorReglas"></div>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: INDICADORES Y GRÁFICAS
+        ==================================================== -->
+        <section class="seccion seccion-graficas" id="indicadores">
+          <div class="franja-verde">
+            <div>
+              <span class="numero-redondo pequeno">5</span>
+              <h2>Indicadores que generará automáticamente el sistema</h2>
+            </div>
+            <p>
+              Una vez capturado el Cuadro 1.1, el sistema generará automáticamente las siguientes visualizaciones para el análisis institucional.
+            </p>
+          </div>
+
+          <div class="aviso-datos" id="avisoDatos">
+            <strong>Datos ilustrativos.</strong> Cifras de ejemplo utilizadas exclusivamente para demostrar la visualización del formato. No constituyen cifras oficiales.
+          </div>
+
+          <div class="grid-graficas">
+            <article class="tarjeta-grafica grafica-ancha">
+              <div class="titulo-grafica"><span>1</span><h3>Expedientes por tipo de procedimiento por cuenta pública</h3></div>
+              <canvas id="graficaProcedimientos"></canvas>
+            </article>
+
+            <article class="tarjeta-grafica">
+              <div class="titulo-grafica"><span>2</span><h3>Expedientes prescritos</h3></div>
+              <canvas id="graficaPrescritos"></canvas>
+            </article>
+
+            <article class="tarjeta-grafica">
+              <div class="titulo-grafica"><span>3</span><h3>Expedientes en etapa de investigación</h3></div>
+              <canvas id="graficaInvestigacion"></canvas>
+            </article>
+
+            <article class="tarjeta-grafica">
+              <div class="titulo-grafica"><span>4</span><h3>Expedientes concluidos</h3></div>
+              <canvas id="graficaConcluidos"></canvas>
+            </article>
+
+            <article class="tarjeta-grafica grafica-ancha">
+              <div class="titulo-grafica"><span>5</span><h3>Expedientes por estatus (Acumulado 2020–2022)</h3></div>
+              <canvas id="graficaEstatus"></canvas>
+            </article>
+
+            <article class="tarjeta-grafica">
+              <div class="titulo-grafica"><span>6</span><h3>Expedientes por ubicación (Acumulado 2020–2022)</h3></div>
+              <canvas id="graficaUbicacion"></canvas>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: EJEMPLO DE CAPTURA
+        ==================================================== -->
+        <section class="seccion grid-ejemplo" id="ejemplo">
+          <article class="tarjeta-informe">
+            <span class="numero-redondo">6</span>
+            <h2>Ejemplo de captura en el Cuadro 1.1</h2>
+            <p>
+              Ejemplo ilustrativo de cómo debe registrarse la información en el Consolidado de Faltas Graves y No Graves.
+            </p>
+            <button class="boton-secundario" id="botonVerTabla" type="button">Ver ejemplo completo</button>
+          </article>
+
+          <div class="tabla-contenedor">
+            <table class="tabla-ejecutiva" id="tablaEjemplo">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: BENEFICIOS
+        ==================================================== -->
+        <section class="seccion" id="beneficios">
+          <div class="titulo-bloque">
+            <span class="numero-redondo">7</span>
+            <div>
+              <h2>Beneficios institucionales</h2>
+              <p>El nuevo apartado permitirá fortalecer la presentación, seguimiento y lectura ejecutiva del informe.</p>
+            </div>
+          </div>
+
+          <div class="grid-beneficios" id="contenedorBeneficios"></div>
+        </section>
+
+        <!-- ===================================================
+             BLOQUE: CONCLUSIONES
+        ==================================================== -->
+        <section class="seccion conclusiones" id="conclusiones">
+          <span class="numero-redondo">8</span>
+          <h2>Conclusiones</h2>
+          <p>
+            La propuesta transforma una sección técnica del informe en una herramienta de seguimiento institucional,
+            permitiendo que la información se capture de forma ordenada y que las gráficas se generen automáticamente
+            a partir de una base homologada.
+          </p>
+        </section>
+      </main>
+
+      <!-- =====================================================
+           FOOTER INSTITUCIONAL
+      ====================================================== -->
+      <footer class="footer-dashboard">
+        <div><strong>Última actualización</strong><span>30 de junio de 2026</span></div>
+        <div><strong>Fuente</strong><span>Google Sheets / Apps Script</span></div>
+        <div><strong>Versión</strong><span>1.0</span></div>
+        <div><strong>Desarrollado por</strong><span>Alondra Burgoin Beltrán</span></div>
+      </footer>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       LIBRERÍAS DE GRÁFICAS
+       Chart.js y chartjs-plugin-datalabels se cargan por CDN.
+  ========================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
