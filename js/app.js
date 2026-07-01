@@ -77,10 +77,12 @@ function inicializarDescargaPDF() {
 }
 
 async function descargarInformePDF() {
+  await asegurarLibreriasPDF();
+
   const JsPDF = obtenerConstructorPDF();
 
   if (!JsPDF) {
-    window.print();
+    alert("No fue posible cargar la librería jsPDF. Revisa tu conexión e intenta de nuevo.");
     return;
   }
 
@@ -125,6 +127,49 @@ async function descargarInformePDF() {
       botonPDF.innerHTML = textoOriginal;
     }
   }
+}
+
+
+function asegurarLibreriasPDF() {
+  const promesas = [];
+
+  if (!obtenerConstructorPDF()) {
+    promesas.push(cargarScriptPDF("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"));
+  }
+
+  if (typeof html2canvas === "undefined") {
+    promesas.push(cargarScriptPDF("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"));
+  }
+
+  return Promise.all(promesas).catch(function (error) {
+    console.warn("No se pudieron cargar todas las librerías auxiliares del PDF.", error);
+  });
+}
+
+function cargarScriptPDF(src) {
+  return new Promise(function (resolver, rechazar) {
+    const existente = document.querySelector(`script[src="${src}"]`);
+
+    if (existente) {
+      existente.addEventListener("load", resolver, { once: true });
+      existente.addEventListener("error", rechazar, { once: true });
+      if (existente.dataset.cargado === "true") {
+        resolver();
+      }
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.dataset.cargado = "false";
+    script.onload = function () {
+      script.dataset.cargado = "true";
+      resolver();
+    };
+    script.onerror = rechazar;
+    document.head.appendChild(script);
+  });
 }
 
 function obtenerConstructorPDF() {
